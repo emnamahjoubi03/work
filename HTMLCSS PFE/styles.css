@@ -144,6 +144,7 @@ body {
     background-color:#0f0f0f ;
     padding: 24px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -169,8 +170,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s;
+    
+    
 }
 
 .video-card:hover .thumbnail {
@@ -188,4 +189,12 @@ body {
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
+}
+
+.video-grid {
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+    padding-top: 80px;
 }
