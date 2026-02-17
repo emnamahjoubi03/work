@@ -100,6 +100,24 @@ body {
 .header-right i:hover {
     background-color: #272727;
 }
+.notification-button {
+    position: relative;
+}
+.notification-badge {
+    height: 4px;
+    position: absolute;
+    top: 7px;
+    right: 1px;
+    width: 0.5%;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 37%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .utilisateur{
     width: 32px;
     height: 32px;
@@ -171,7 +189,7 @@ body {
     padding: 1px 16px;
     height: 1000px;
 }
-.sidebar {
+.sidebar{
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -183,9 +201,10 @@ body {
   overflow: auto;
   font-family: 'Roboto', sans-serif;
 }
+
 .sidebar a {
     display: block; 
-    padding: 25px;
+    padding: 20px;
     text-decoration: none;
 }
 .sidebar a:link {
@@ -203,29 +222,38 @@ body {
 .sidebar a:hover {
   color: white;
   background-color: #272727;
-  border-radius: 100%;
+  border-radius: 10%;
   text-decoration: none;
   width: fit-content;
+}
+.sidebar a:active, .active{
+    color: #e5e5e5;
+
 }
 .video-tags{
     gap: 8px;
     padding: 12px 0;
+    color: white;
+    background-color: ;
     border-bottom: 1px solid #e5e5e5;
     font-family: 'Roboto', sans-serif;
 }
 .tag {
     display: inline-block;
     padding: 6px 12px;
-    background-color: #f2f2f2;
-    color: #0f0f0f;
+    background-color: #272727;
+    color: white;
     font-size: 14px;
     font-weight: 500;
-    border-radius: 16px;
+    border-radius: 10px;
     cursor: pointer;
-    
-    
-
 }
+
+.tag:active, .tag.active{
+    background-color: #f2f2f2;
+    color: black;
+}
+
 .stretch{
     align-items: stretch;
     flex-wrap: wrap;
@@ -298,5 +326,5 @@ body {
     line-height: 20px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    
 }
