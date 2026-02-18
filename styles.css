@@ -1,26 +1,31 @@
 body {
+    display: block;
     background-color: #0f0f0f;
     color: white;
     overflow-x: hidden;
+    
 }
 .header {
     position:fixed;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     background-color: #0f0f0f;
-    height: 56px;
-    padding: 0 16px;
+    padding: 8px 16px;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     box-sizing: border-box;
+    overflow: hidden;
+    
 }
 .header-left {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-shrink: 0;
 }
 .menu-icon {
     font-size: 24px;
@@ -43,7 +48,8 @@ body {
 
 .search-bar {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0; 
     justify-content: center;
     align-items: center;
     margin-right: 16px;
@@ -79,6 +85,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 8px;
+    flex-shrink: 0;
 }
 .mic-icon:hover {
     background-color: #272727;
@@ -86,13 +94,20 @@ body {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex-shrink: 0;   
+    margin-right: 0;
     font-family: 'Roboto', sans-serif;
-    overflow: visible;
 }
 
 .header-right i {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 0;
+    gap: 4px;
     padding: 8px;
     border-radius: 50%;
 }
@@ -102,6 +117,8 @@ body {
 }
 .notification-button {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 .notification-badge {
     height: 4px;
@@ -123,17 +140,23 @@ body {
     height: 32px;
     background-color: pink;
     border-radius: 50%;
-    display: flex;
+    display: flex ;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     cursor: pointer;
     color: white;
     margin-left: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    flex-shrink: 0 ;
 }
 .main {
+    position: sticky;
     display: flex;
-    margin-top: 56px;
+    margin-top: 60px;     /* header  */
+    margin-left: 60px;   /* sidebar*/
 }
 
 
@@ -185,19 +208,22 @@ body {
     height: 100%;
     gap: 16px;
     row-gap: 40px;
-    margin-left:75px;
     padding: 1px 16px;
     height: 1000px;
 }
 .sidebar{
+  position: fixed;
   flex-wrap: wrap;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 60px);
   margin: 0;
   padding: 0;
-  width: 100px;
+  width: 72px;
   color: white;
   background-color: #0f0f0f;
   position: fixed;
-  height: 100%;
+  height: 50%;
   overflow: auto;
   font-family: 'Roboto', sans-serif;
 }
@@ -279,52 +305,61 @@ body {
     /*grid-template-columns: repeat(3, minmax(400px, 1fr));*/
 }
 .video-info {
-    width: 100%;
-}
-.video-details{
-    
-    min-width: 0; 
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
     font-family: 'Roboto', sans-serif;
 }
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    background-color: pink;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 500;
+    color: white;
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .video-title {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
-    margin-bottom: 4px;
-    overflow: hidden;
+    margin: 0 0 4px 0;
     color: white;
     cursor: pointer;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
 
-}
-.channel-icon{
-     width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: pink;
-    border-radius: 50%;
-    cursor: pointer;
-}
 .channel-name {
-    margin-bottom: 2px;
+    font-size: 14px;
+    color: #aaa;
+    margin: 0 0 2px 0;
+    line-height: 20px;
+    cursor: pointer;
 }
 
 .channel-name:hover {
-    width: 15%;
-    cursor: pointer;
+    color: #fff;
 }
-.channel-row{
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    padding: 10px;
-}
-.channel-name,
+
 .video-stats {
     font-size: 14px;
     color: #aaa;
+    margin: 0;
     line-height: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    
 }
