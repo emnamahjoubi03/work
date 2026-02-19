@@ -377,8 +377,15 @@
                 margin: 0 0 0 auto;              
                 justify-content: flex-end;
             }
-            .mic-icon {
-                margin-left: 4px;
+            .sidebar{
+                display: none;
+                width: 0;
+                padding: 0%;
+                margin: 0%;
+                
+            }
+            .contenu {
+                margin-left: -70px;
             }
         }
 
@@ -405,6 +412,16 @@
                 top: 2px;
                 right: 0px;
             }
+            .sidebar{
+                display: none;
+                width: 0;
+                padding: 0%;
+                margin: 0%;
+                
+            }
+            .contenu {
+                margin-left:-50px;
+            }
         }
 
         @media screen and (max-width: 400px) {
@@ -415,6 +432,16 @@
             .mic-icon {
                 width: 36px;
                 height: 36px;
+            }
+            .sidebar{
+                display: none;
+                width: 0;
+                padding: 0%;
+                margin: 0%;
+                
+            }
+            .contenu {
+                margin-left: -50px;
             }
         }
 
@@ -428,6 +455,16 @@
             }
             .main {
                 margin-left: 60px;
+            }
+            .sidebar{
+                display: none;
+                width: 0;
+                padding: 0%;
+                margin: 0%;
+
+            }
+            .contenu {
+                margin-left: -60px;
             }
         }
 
